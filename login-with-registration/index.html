@@ -2,6 +2,55 @@
 
 <head>
     <title>Login With Registration</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
+
+<body>
+    <div class="login-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <input type="button" id="btnLogIn" value="Log In" onclick="login()" class="toggle-btn">
+            <input type="button" id="btnRegister" value="Register" onclick="register()" class="toggle-btn">
+        </div>
+        <form id="frmLogin" class="login-form">
+            <input type="text" required placeholder="Enter User Name">
+            <input type="password" required placeholder="Enter Password">
+            <input type="checkbox"><span>Remember Password</span>
+            <input type="submit" required value="Log In">
+        </form>
+        <form id="frmRgister" class="login-form">
+            <input type="text" required placeholder="Enter User Name">
+            <input type="email" required placeholder="Enter Email Id">
+            <input type="password" required placeholder="Enter Password">
+            <input type="submit" required value="Register">
+        </form>
+        <div class="social-media-icons">
+            <img src="images/facebook.png">
+            <img src="images/twitter.jpg">
+            <img src="images/google.png">
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById("btn")
+
+        function login() {
+            btn.style.left = "0"
+            document.getElementById("btnLogIn").style.color = "white";
+            document.getElementById("btnRegister").style.color = "black";
+
+            document.getElementById("frmLogin").style.left = "10"
+            document.getElementById("frmRgister").style.left = "400"
+
+        }
+        function register() {
+            btn.style.left = "50%";
+            document.getElementById("btnLogIn").style.color = "black";
+            document.getElementById("btnRegister").style.color = "white";
+
+            document.getElementById("frmLogin").style.left = "-400"
+            document.getElementById("frmRgister").style.left = "10"
+        }
+    </script>
+</body>
 
 </html>
